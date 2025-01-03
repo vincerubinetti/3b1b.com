@@ -1,0 +1,16 @@
+.char {
+  -webkit-text-stroke: 1px transparent;
+  paint-order: stroke;
+  animation: char 1s both ease-in-out;
+}
+
+@keyframes char {
+  0% {
+    color: transparent;
+  }
+
+  50% {
+    -webkit-text-stroke: 1px var(--outline, var(--theme-light));
+    color: transparent;
+  }
+}

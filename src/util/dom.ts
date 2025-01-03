@@ -1,4 +1,4 @@
-/** theme css variables https://stackoverflow.com/a/78994961/2180570 */
+/** get theme css variables https://stackoverflow.com/a/78994961/2180570 */
 export const getThemeVariables = () =>
   typeof window === "undefined"
     ? {}

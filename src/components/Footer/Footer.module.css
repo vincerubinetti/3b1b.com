@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 20px;
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  color: var(--black);
+}
+
+@media print {
+  .footer {
+    display: none;
+  }
+}

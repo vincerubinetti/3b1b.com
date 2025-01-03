@@ -1,0 +1,44 @@
+.background {
+  display: flex;
+  z-index: -1;
+  position: absolute;
+  align-items: center;
+  inset: 0;
+  overflow: hidden;
+}
+
+.svg {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  animation: rotate-grid 120s linear infinite;
+  opacity: 0.25;
+}
+
+.line {
+  stroke-dasharray: 1 1;
+  animation: draw-line 15s ease-in-out both infinite;
+}
+
+@keyframes rotate-grid {
+  0% {
+    transform: perspective(1000px) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes draw-line {
+  0% {
+    stroke-dashoffset: 3;
+  }
+  30% {
+    stroke-dashoffset: 2;
+  }
+  70% {
+    stroke-dashoffset: 2;
+  }
+  100% {
+    stroke-dashoffset: 1;
+  }
+}

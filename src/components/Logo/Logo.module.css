@@ -1,0 +1,9 @@
+.iris polygon {
+  animation: iris 2s var(--delay, 0s) ease both;
+}
+
+@keyframes iris {
+  0% {
+    scale: 0.5;
+  }
+}

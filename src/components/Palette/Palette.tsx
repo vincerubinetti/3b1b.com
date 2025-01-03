@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { getThemeVariables } from "@/util/dom";
 
+/** test card for color palette */
 const Palette = () => {
   const [variables, setVariables] = useState<
     ReturnType<typeof getThemeVariables>
   >({});
 
   useEffect(() => {
+    /** get root css vars on page load */
     setVariables(getThemeVariables());
   }, []);
 

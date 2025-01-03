@@ -1,10 +1,10 @@
 /* https://tailwindcss.com/docs/customizing-colors */
 
-:root,
 [data-dark="false"] {
   --theme: hsl(200, 90%, 60%);
-  --theme-light: hsl(200, 90%, 87%);
+  --theme-light: hsl(200, 90%, 80%);
   --theme-dark: hsl(200, 90%, 40%);
+  --secondary: hsl(25, 60%, 25%);
 
   --white: hsl(200, 10%, 100%);
   --off-white: hsl(200, 10%, 98%);
@@ -14,13 +14,14 @@
   --off-black: hsl(200, 10%, 10%);
   --black: hsl(200, 10%, 0%);
 
-  --shadow: hsla(0, 0%, 0%, 0.25);
+  --shadow: hsla(0, 0%, 0%, 0.1);
 }
 
 [data-dark="true"] {
   --theme: hsl(200, 90%, 60%);
   --theme-light: hsl(200, 90%, 40%);
-  --theme-dark: hsl(200, 90%, 87%);
+  --theme-dark: hsl(200, 90%, 80%);
+  --secondary: hsl(25, 60%, 25%);
 
   --white: hsl(200, 10%, 0%);
   --off-white: hsl(200, 10%, 10%);
@@ -47,6 +48,6 @@
 
   /** effects */
   --rounded: 8px;
-  --shadow: 0 0 20px var(--overlay);
-  --transition: 0.1s ease-in-out;
+  --box-shadow: 0 0 5px 2px var(--shadow), 0 5px 5px var(--shadow);
+  --transition: 0.1s ease;
 }

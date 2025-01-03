@@ -1,0 +1,14 @@
+.button {
+  position: relative;
+  padding: var(--control-padding) !important;
+}
+
+.input {
+  appearance: none;
+  position: absolute;
+}
+
+.icon {
+  display: flex;
+  font-size: 1.2rem;
+}

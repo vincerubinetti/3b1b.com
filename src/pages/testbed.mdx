@@ -1,8 +1,10 @@
 ---
 title: Testbed
+description: Visual testbed of all site elements and components
 ---
 
-import Palette from "@/components/Palette";
+import { LuHistory } from "react-icons/lu";
+import Palette from "@/components/Palette/Palette";
 
 <section>
 
@@ -96,13 +98,17 @@ console.info(
 
 <section>
 
+<div style={{ width: 100, height: 100, boxShadow: "var(--box-shadow)" }} />
+
+<button>
+  <LuHistory />
+</button>
+
 <button>Button</button>
 
-{
-  <a href="" className="button">
-    Link Button
-  </a>
-}
+<a href="" className="button">
+  Link Button
+</a>
 
 <input placeholder="Search" />
 

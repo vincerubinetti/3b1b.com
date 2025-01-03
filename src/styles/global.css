@@ -3,15 +3,18 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   margin: 0;
   background: var(--white);
   color: var(--black);
   font-weight: var(--regular);
   line-height: var(--compact);
   font-family: var(--sans);
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
@@ -123,7 +126,7 @@ p {
 a {
   color: var(--theme);
   text-underline-offset: 2px;
-  transition: color var(--transition);
+  transition: background var(--transition) color var(--transition);
 }
 
 a:hover {
@@ -201,7 +204,9 @@ button,
   font: inherit;
   text-decoration: none;
   cursor: pointer;
-  transition: background var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 :is(button, .button):hover {
@@ -209,16 +214,30 @@ button,
   color: var(--white);
 }
 
+:is(button, .button):has(> svg:only-child) {
+  padding: var(--control-padding);
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
 input:not([type="checkbox"]) {
   appearance: none;
   min-height: var(--control);
   padding: var(--control-padding) calc(var(--control-padding) + 0.5em);
-  border: none;
+  border: solid 2px var(--light-gray);
   border-radius: var(--rounded);
   background: var(--light-gray);
   color: var(--black);
   font: inherit;
-  transition: border-color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border var(--transition);
 }
 
 input:hover {
@@ -231,12 +250,15 @@ textarea {
   max-width: 100%;
   min-height: var(--control);
   padding: var(--control-padding) calc(var(--control-padding) + 0.5em);
-  border: none;
+  border: solid 2px var(--light-gray);
   border-radius: var(--rounded);
   background: var(--light-gray);
   color: var(--black);
   font: inherit;
-  transition: border-color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border var(--transition);
 }
 
 textarea:hover {
@@ -274,7 +296,9 @@ select {
   color: var(--black);
   font: inherit;
   cursor: pointer;
-  transition: background-color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 select:hover {
