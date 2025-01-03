@@ -1,7 +1,9 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import * as mdx from "eslint-plugin-mdx";
 import prettier from "eslint-plugin-prettier";
 import globals from "globals";
+import remarkFrontmatter from "remark-frontmatter";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
 import tsParser from "@typescript-eslint/parser";
@@ -22,6 +24,11 @@ const config = [
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ),
+  {
+    ...mdx.flat,
+    plugins: { remarkFrontmatter },
+    processor: mdx.createRemarkProcessor({}),
+  },
   {
     files: ["**/*.{js,jsx,ts,tsx,mdx,mjs}"],
     plugins: {

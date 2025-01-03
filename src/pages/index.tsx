@@ -1,12 +1,5 @@
-import Head from "next/head";
-
-const Home = () => (
-  <>
-    <Head>
-      <title>Home</title>
-    </Head>
-    Hello World
-  </>
-);
+const Home = () => <section>Hello World</section>;
 
 export default Home;
+
+export const getStaticProps = () => ({ props: { title: "" } });
