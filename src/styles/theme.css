@@ -1,0 +1,52 @@
+/* https://tailwindcss.com/docs/customizing-colors */
+
+:root,
+[data-dark="false"] {
+  --theme: hsl(200, 90%, 60%);
+  --theme-light: hsl(200, 90%, 87%);
+  --theme-dark: hsl(200, 90%, 40%);
+
+  --white: hsl(200, 10%, 100%);
+  --off-white: hsl(200, 10%, 98%);
+  --light-gray: hsl(200, 10%, 90%);
+  --gray: hsl(200, 10%, 65%);
+  --dark-gray: hsl(200, 10%, 20%);
+  --off-black: hsl(200, 10%, 10%);
+  --black: hsl(200, 10%, 0%);
+
+  --shadow: hsla(0, 0%, 0%, 0.25);
+}
+
+[data-dark="true"] {
+  --theme: hsl(200, 90%, 60%);
+  --theme-light: hsl(200, 90%, 40%);
+  --theme-dark: hsl(200, 90%, 87%);
+
+  --white: hsl(200, 10%, 0%);
+  --off-white: hsl(200, 10%, 10%);
+  --light-gray: hsl(200, 10%, 20%);
+  --gray: hsl(200, 10%, 35%);
+  --dark-gray: hsl(200, 10%, 90%);
+  --off-black: hsl(200, 10%, 98%);
+  --black: hsl(200, 10%, 100%);
+
+  --shadow: hsla(0, 0%, 100%, 0.125);
+}
+:root {
+  /** sizes */
+  --column: 1000px;
+  --control: 30px;
+  --control-padding: calc((var(--control) - 1em) / 2);
+
+  /* text */
+  --regular: 300;
+  --medium: 450;
+  --bold: 600;
+  --spacing: 2;
+  --compact: 1.5;
+
+  /** effects */
+  --rounded: 8px;
+  --shadow: 0 0 20px var(--overlay);
+  --transition: 0.1s ease-in-out;
+}

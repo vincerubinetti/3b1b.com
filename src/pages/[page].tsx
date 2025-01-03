@@ -1,12 +1,13 @@
 import type { InferGetStaticPropsType } from "next";
-import { MDXRemote } from "next-mdx-remote";
+import { useMemo } from "react";
+import { getMDXComponent } from "mdx-bundler/client";
 import { mdxStaticPaths, mdxStaticProps } from "@/util/pages";
 
 /** render mdx pages in this folder */
-const Page = ({ source }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if (!source) return <></>;
+const Page = ({ code }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const Component = useMemo(() => getMDXComponent(code), [code]);
 
-  return <MDXRemote {...source} />;
+  return <Component />;
 };
 
 export default Page;

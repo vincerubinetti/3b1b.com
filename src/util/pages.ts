@@ -1,9 +1,10 @@
 import { readFileSync } from "fs";
-import { dirname, join, parse } from "path";
+import { dirname, join, parse, resolve } from "path";
 import { fileURLToPath } from "url";
 import type { GetStaticPropsContext } from "next";
-import { serialize } from "next-mdx-remote/serialize";
 import { globSync } from "glob";
+import { bundleMDX } from "mdx-bundler";
+import remarkGfm from "remark-gfm";
 
 /** make getStaticProps func for page */
 export const mdxStaticProps =
@@ -14,10 +15,18 @@ export const mdxStaticProps =
 
     /** get mdx source file from pages folder */
     const path = join(getDir(url), `${page}.mdx`);
-    const raw = readFileSync(path, "utf-8");
-    const source = await serialize(raw, { parseFrontmatter: true });
+    const source = readFileSync(path, "utf-8");
+    resolve(join(getDir(import.meta.url), "../"));
+    const result = await bundleMDX({
+      source,
+      cwd: root,
+      mdxOptions: (options) => {
+        options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
+        return options;
+      },
+    });
 
-    return { props: { frontmatter: source.frontmatter, source } };
+    return { props: result };
   };
 
 /** make getStaticPaths func for page */
@@ -25,11 +34,12 @@ export const mdxStaticPaths = (url: string) => () => {
   const paths = globSync(`*.mdx`, { cwd: getDir(url) }).map(
     (path) => `/${parse(path).name}`,
   );
-  return {
-    paths,
-    fallback: false,
-  };
+
+  return { paths, fallback: false };
 };
 
 /** get path's folder name */
 const getDir = (url: string) => dirname(fileURLToPath(url));
+
+/** get root folder */
+const root = join(getDir(import.meta.url), "..", "..");
