@@ -34,10 +34,11 @@ const App = ({
     .join(" | ");
 
   /** page description or site description */
-  const description =
+  const description = String(
     pageProps.description ??
-    pageProps.frontmatter?.description ??
-    vars.description;
+      pageProps.frontmatter?.description ??
+      vars.description,
+  );
 
   /** font css variables https://github.com/vercel/next.js/issues/44840 */
   const fontVars = Object.entries(fonts)

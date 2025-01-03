@@ -79,3 +79,19 @@
     display: contents;
   }
 }
+
+/** for making share thumbnail */
+
+/* .header {
+  justify-content: center;
+  aspect-ratio: 2 / 1;
+  width: 400px;
+}
+
+.title {
+  margin: 0 !important;
+}
+
+.nav {
+  display: none !important;
+} */

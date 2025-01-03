@@ -6,7 +6,8 @@
     "start": "next start",
     "lint": "next lint --fix && prettier **/*.{js,jsx,ts,tsx,md,mdx,css,html,json,yaml} --write --no-error-on-unmatched-pattern",
     "test:types": "tsc --noEmit",
-    "test:lint": "next lint && prettier **/*.{js,jsx,ts,tsx,md,mdx,css,html,json,yaml} --check --no-error-on-unmatched-pattern"
+    "test:lint": "next lint && prettier **/*.{js,jsx,ts,tsx,md,mdx,css,html,json,yaml} --check --no-error-on-unmatched-pattern",
+    "test": "bun run test:types && bun run test:lint"
   },
   "dependencies": {
     "@reactuses/core": "^6.0.1",

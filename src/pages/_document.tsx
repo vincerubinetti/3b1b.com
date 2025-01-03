@@ -8,7 +8,7 @@ const Document = () => {
         <meta charSet="utf-8" />
 
         <link rel="icon" type="image/png" sizes="512x512" href="/icon.png" />
-        <meta property="og:image" content="share.jpg" />
+        <meta property="og:image" content="/share.jpg" />
       </Head>
 
       <body>

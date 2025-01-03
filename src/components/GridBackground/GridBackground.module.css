@@ -10,16 +10,16 @@
 .svg {
   aspect-ratio: 1 / 1;
   width: 100%;
-  animation: rotate-grid 120s linear infinite;
+  animation: rotate 120s linear infinite;
   opacity: 0.25;
 }
 
 .line {
   stroke-dasharray: 1 1;
-  animation: draw-line 15s ease-in-out both infinite;
+  animation: stroke 15s ease-in-out both infinite;
 }
 
-@keyframes rotate-grid {
+@keyframes rotate {
   0% {
     transform: perspective(1000px) rotateX(65deg) rotateZ(0deg);
   }
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes draw-line {
+@keyframes stroke {
   0% {
     stroke-dashoffset: 3;
   }
@@ -42,3 +42,15 @@
     stroke-dashoffset: 1;
   }
 }
+
+/** for making share thumbnail */
+
+/* .svg {
+  transform: perspective(1000px) rotateX(65deg) rotateZ(45deg);
+  animation: none !important;
+  opacity: 0.35 !important;
+}
+
+.line {
+  animation: none !important;
+} */
