@@ -48,6 +48,6 @@
 
   /** effects */
   --rounded: 8px;
-  --box-shadow: 0 0 5px 2px var(--shadow), 0 5px 5px var(--shadow);
+  --box-shadow: 0 0 10px var(--shadow), 0 5px 10px var(--shadow);
   --transition: 0.1s ease;
 }

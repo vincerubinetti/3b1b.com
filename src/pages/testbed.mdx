@@ -3,8 +3,8 @@ title: Testbed
 description: Visual testbed of all site elements and components
 ---
 
-import Link from "next/link";
 import { LuHistory } from "react-icons/lu";
+import Link from "@/components/Link/Link";
 import Palette from "@/components/Palette/Palette";
 
 <section>
@@ -107,10 +107,6 @@ console.info(
 
 <button>Button</button>
 
-<Link href="/" className="button">
-  Link Button
-</Link>
-
 <input placeholder="Search" />
 
 <textarea placeholder="Search" />
@@ -122,5 +118,13 @@ console.info(
 </select>
 
 <input type="checkbox" />
+
+</section>
+
+<section>
+
+<Link href="/" className="button">
+  Link Button
+</Link>
 
 </section>

@@ -146,7 +146,7 @@ const Iris = ({ radius, color }: IrisProps) => (
 
 /** black center pupil */
 const Pupil = () => (
-  <g>
+  <g className={classes.pupil}>
     <circle cx="0" cy="0" r={r4} fill={blue[4]} />
   </g>
 );

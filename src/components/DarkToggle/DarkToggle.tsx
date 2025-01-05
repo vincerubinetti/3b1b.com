@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { LuMoonStar, LuSun } from "react-icons/lu";
-import clsx from "clsx";
 import { useLocalStorage } from "@reactuses/core";
 import classes from "./DarkToggle.module.css";
 
@@ -16,7 +15,7 @@ const DarkToggle = () => {
 
   return (
     <label>
-      <div className={clsx(classes.button, "button")}>
+      <div className={classes.button}>
         <input
           className={classes.input}
           type="checkbox"

@@ -1,4 +1,3 @@
-import DarkToggle from "@/components/DarkToggle/DarkToggle";
 import classes from "./Footer.module.css";
 
 const Footer = () => (
@@ -6,7 +5,6 @@ const Footer = () => (
     <span suppressHydrationWarning>
       © {new Date().getFullYear()} Grant Sanderson
     </span>
-    <DarkToggle />
   </footer>
 );
 

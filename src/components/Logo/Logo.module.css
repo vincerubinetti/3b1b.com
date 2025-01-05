@@ -4,6 +4,17 @@
 
 @keyframes iris {
   0% {
-    scale: 0.5;
+    scale: 0.75;
+  }
+}
+
+
+.pupil {
+  animation: pupil 2s var(--delay, 0s) ease both;
+}
+
+@keyframes pupil {
+  0% {
+    scale: 1.25;
   }
 }

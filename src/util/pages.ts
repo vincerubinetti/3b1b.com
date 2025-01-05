@@ -20,8 +20,17 @@ export const mdxStaticProps =
     const result = await bundleMDX({
       source,
       cwd: root,
+      globals: {
+        "next/link": "Link",
+      },
       mdxOptions: (options) => {
         options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
+        return options;
+      },
+      esbuildOptions: (options) => {
+        /** https://github.com/kentcdodds/mdx-bundler/issues/116 */
+        options.target = "ESNext";
+        options.outdir = "./";
         return options;
       },
     });

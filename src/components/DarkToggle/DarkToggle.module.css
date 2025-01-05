@@ -1,6 +1,6 @@
 .button {
   position: relative;
-  padding: var(--control-padding) !important;
+  padding: var(--control-padding) calc(var(--control-padding) * 2);
 }
 
 .input {

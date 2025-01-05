@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DarkToggle from "@/components/DarkToggle/DarkToggle";
 import FillText from "@/components/FillText/FillText";
 import GridBackground from "@/components/GridBackground/GridBackground";
 import Logo from "@/components/Logo/Logo";
@@ -41,6 +42,7 @@ const Header = () => (
           {text}
         </a>
       ))}
+      <DarkToggle />
     </nav>
   </header>
 );
